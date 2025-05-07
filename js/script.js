@@ -84,7 +84,6 @@ function runElectre() {
     const numAlternativesInput = document.getElementById('numAlternatives');
     const numCriteriaInput = document.getElementById('numCriteria');
 
-    // Перевірка: чи існує форма
     if (!numAlternativesInput || !numCriteriaInput) {
         showMessage('Будь ласка, створіть форму та введіть дані перед розрахунком.', 'error');
         return;
@@ -154,7 +153,7 @@ function runElectre() {
 
     showMessage('Обробка запиту...', 'success');
 
-    fetch('http://127.0.0.1:5000/api/run-electre', {
+    fetch('https://electre-iii-backend.onrender.com/api/run-electre', {  // ✅ ЗАМІНЕНО на продакшн URL
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -167,7 +166,7 @@ function runElectre() {
     })
     .then(result => {
         const resultContainer = document.getElementById('result');
-        resultContainer.innerHTML = ''; // очищаємо попередній результат
+        resultContainer.innerHTML = '';
 
         const conclusionDiv = document.createElement('div');
         conclusionDiv.className = 'alert alert-success';
