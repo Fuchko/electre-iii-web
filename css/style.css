@@ -1,0 +1,7 @@
+/* css/styles.css */
+table {
+    margin-top: 20px;
+}
+.table-responsive {
+    overflow-x: auto;
+}
