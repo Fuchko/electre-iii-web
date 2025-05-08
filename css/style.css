@@ -5,3 +5,21 @@ table {
 .table-responsive {
     overflow-x: auto;
 }
+@media (max-width: 576px) {
+    table input {
+        width: 100% !important;
+        min-width: 60px;
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
+
+    #runButton, #saveButton, #loadLabel {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
